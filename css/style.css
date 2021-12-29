@@ -48,12 +48,42 @@ a {
   font-size: 20px;
 }
 
-.icon {
+.icon, .icon-sm {
   font-size: 50px;
   color: #6d5dd7;
 }
 
-.myButton {
+.icon-sm {
+  font-size: 20px;
+}
+
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color: #6d5dd7;
+  content: "";
+  transition: width 0.2s;
+}
+
+.underlineHover:hover {
+  color: #6d5dd7;
+}
+
+.underlineHover:hover:after {
+  width: 100%;
+}
+
+.scaleUp {
+  transition: all 0.2s ease;
+}
+.scaleUp:hover {
+  transform: scale(1.2);
+}
+
+.myButton, .myButton-sm {
   background-color: white;
   color: #6d5dd7;
   border: 2px solid #6d5dd7;
@@ -66,9 +96,13 @@ a {
   transition-duration: 0.4s;
   cursor: pointer;
 }
-.myButton:hover {
+.myButton:hover, .myButton-sm:hover {
   background-color: #6d5dd7;
   color: white;
+}
+
+.myButton-sm {
+  padding: 8px 16px;
 }
 
 .Btn, .Btn-text {
@@ -384,7 +418,7 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #6d5dd7;
 }
 
 /* FORM TYPOGRAPHY*/
@@ -558,6 +592,50 @@ input[type=text]:placeholder {
 }
 
 /* Simple CSS3 Fade-in Animation */
+/* OTHERS */
+*:focus {
+  outline: none;
+}
+
+/* Text  */
+.text {
+  cursor: default;
+  color: #5a5a5a;
+}
+
+.textN {
+  color: #5a5a5a;
+  font-weight: bold;
+}
+
+.textP {
+  cursor: default;
+  color: #6d5dd7;
+}
+
+.heading {
+  cursor: default;
+  font-size: 30px;
+  color: #6d5dd7;
+}
+
+.heading-title, .heading-title-md {
+  color: #6d5dd7;
+}
+
+.heading-title-md {
+  font-size: 20px;
+}
+
+.icon, .icon-sm {
+  font-size: 50px;
+  color: #6d5dd7;
+}
+
+.icon-sm {
+  font-size: 20px;
+}
+
 .underlineHover:after {
   display: block;
   left: 0;
@@ -577,9 +655,15 @@ input[type=text]:placeholder {
   width: 100%;
 }
 
-/* OTHERS */
-*:focus {
-  outline: none;
+.scaleUp {
+  transition: all 0.2s ease;
+}
+.scaleUp:hover {
+  transform: scale(1.2);
+}
+
+.Container {
+  margin-top: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
