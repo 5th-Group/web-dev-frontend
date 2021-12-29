@@ -93,6 +93,13 @@ a {
   color: white;
 }
 
+.user-avt {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
 .containerBox {
   display: block;
   position: relative;
@@ -309,4 +316,4 @@ a {
   background-color: white;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=style.css.map */
