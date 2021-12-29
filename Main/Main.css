@@ -1,0 +1,361 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(../font/CreativeThoughts-Regular.otf);
+}
+
+/* Test */
+
+/* Grid */
+.grid-container {
+    margin-top: 100px;
+    height: 2000px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px 1000px;
+    grid-template-rows: 30px 50px;
+    grid-auto-rows: 450px;
+    grid-template-areas: "filter-header book-header " "filter category " "filter show " "filter show ";
+    gap: 7px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+/* Grid area-items */
+.grid-category {
+    grid-area: category;
+    border-radius: 10px;
+    border: 1px solid #6d5dd7;
+}
+
+.grid-book-header {
+    grid-area: book-header;
+}
+
+.grid-filter-header {
+    grid-area: filter-header;
+}
+
+.grid-show {
+    grid-area: show;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.grid-filter {
+    grid-area: filter;
+    border-radius: 10px;
+    border: 1px solid #6d5dd7;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+/* Text  */
+.heading {
+    cursor: default;
+    font-size: 30px;
+    color: #6d5dd7;
+}
+
+/*  Book css */
+.cover-container {
+    border: 1px solid #6d5dd7;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.cover-container:hover {
+    background-color: #6d5dd7;
+    transform: scale(1.2);
+}
+.cover-container:hover span {
+    color: white;
+}
+
+/* Book img */
+.img-container {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.book-img {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+.book-img:hover {
+    transform: scale(1.1);
+}
+
+.Btn-text {
+    background-color: white;
+    color: #5a5a5a;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.Btn-text:hover {
+    color: #6d5dd7;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.Btn {
+    background-color: white;
+    color: #5a5a5a;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #6d5dd7;
+}
+.Btn:hover {
+    color: white;
+    background-color: #6d5dd7;
+}
+
+.containerBox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.containerBox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    transition: background-color 0.2s ease;
+}
+
+.containerBox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.containerBox input:checked ~ .checkmark {
+    background-color: #6d5dd7;
+}
+/* Detail */
+.grid-detail-container {
+    margin-top: 100px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px 800px;
+    grid-template-rows: 550px;
+    gap: 7px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.grid-book-desc .heading {
+    font-weight: 500;
+    font-size: 50px;
+    color: #6d5dd7;
+    font-family: "Limelight", cursive;
+}
+
+/* Book Detail */
+/* Img */
+.book-detail-img {
+    width: 250px;
+    object-fit: contain;
+}
+
+.heading-title,
+.heading-title-md {
+    color: #6d5dd7;
+}
+
+.heading-title-md {
+    font-size: 20px;
+}
+
+.myNav {
+    background-color: #6d5dd7;
+    color: white;
+}
+
+.textTest {
+    color: white;
+}
+/* End Detail */
+
+/* User */
+.grid-admin-container {
+    margin-top: 110px;
+    height: 2000px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px 1000px;
+    grid-template-rows: 30px;
+    grid-auto-rows: 300px;
+    grid-template-areas: "header content-header " "filter table " "filter table ";
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.grid-admin-container .header {
+    grid-area: header;
+}
+.grid-admin-container .content-header {
+    grid-area: content-header;
+}
+.grid-admin-container .filter {
+    grid-area: filter;
+    border: 1px solid #6d5dd7;
+}
+.grid-admin-container .myTable {
+    grid-area: table;
+    border-radius: 5px;
+    border: 1px solid #6d5dd7;
+    overflow: auto;
+}
+
+/* End User */
+
+/* Book */
+.grid-admin-container {
+    margin-top: 110px;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 300px 1000px;
+    grid-template-rows: 30px;
+    grid-auto-rows: 300px;
+    grid-template-areas: "header content-header " "filter table " "filter table ";
+    row-gap: 20px;
+    column-gap: 20px;
+}
+.grid-admin-container .header {
+    grid-area: header;
+}
+.grid-admin-container .content-header {
+    grid-area: content-header;
+}
+.grid-admin-container .filter {
+    grid-area: filter;
+    border: 1px solid #6d5dd7;
+}
+.grid-admin-container .myTable {
+    grid-area: table;
+    overflow: auto;
+    border-radius: 5px;
+    border: 1px solid #6d5dd7;
+}
+.grid-admin-container .myTable .table thead tr {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+/* End Book */
+/* Utils */
+
+.text {
+    cursor: default;
+    color: #5a5a5a;
+}
+
+.textP {
+    cursor: default;
+    color: #6d5dd7;
+}
+
+.myButton {
+    background-color: white;
+    color: #6d5dd7;
+    border: 2px solid #6d5dd7;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.myButton:hover {
+    background-color: #6d5dd7;
+    color: white;
+}
+
+.Btn-text {
+    border: none;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+
+.heading {
+    cursor: default;
+    font-size: 30px;
+    color: #6d5dd7;
+}
+
+.textN {
+    color: #5a5a5a;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+.option-item {
+    border-bottom: 1px solid #6d5dd7;
+    transition: all 0.2s ease;
+}
+.option-item:hover {
+    background-color: #6d5dd7;
+    color: white;
+}
+.option-item:hover span {
+    color: white;
+}
+
+/* Scollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6d5dd7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Detail page */
+/* Grid */
+
+/*# sourceMappingURL=main.css.map */
