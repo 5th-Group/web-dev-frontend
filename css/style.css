@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -24,12 +28,19 @@ a {
   color: #5a5a5a;
 }
 
-.textN {
+.myText-sm, .myText-sm-color {
+  font-size: 11px;
+}
+.myText-sm-color {
+  color: #6d5dd7;
+}
+
+.text-color {
   color: #5a5a5a;
   font-weight: bold;
 }
 
-.textP {
+.text-color {
   cursor: default;
   color: #6d5dd7;
 }
@@ -43,7 +54,6 @@ a {
 .heading-title, .heading-title-md {
   color: #6d5dd7;
 }
-
 .heading-title-md {
   font-size: 20px;
 }
@@ -76,11 +86,29 @@ a {
   width: 100%;
 }
 
-.scaleUp {
+.scaleUp, .scaleUp-color, .scaleUp-down, .scaleUp-lite {
   transition: all 0.2s ease;
 }
-.scaleUp:hover {
+.scaleUp:hover, .scaleUp-color:hover, .scaleUp-down:hover, .scaleUp-lite:hover {
   transform: scale(1.2);
+}
+.scaleUp-lite:hover {
+  transform: scale(1.1);
+}
+.scaleUp-down:hover {
+  transform: scale(1.1) translateY(5%);
+  background-color: #6d5dd7;
+}
+.scaleUp-color:hover {
+  transform: scale(1.1) translateY(5%);
+  background-color: #6d5dd7;
+}
+.scaleUp-color:hover .myText-sm, .scaleUp-color:hover .myText-sm-color {
+  color: white;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .myButton, .myButton-sm {
@@ -100,31 +128,37 @@ a {
   background-color: #6d5dd7;
   color: white;
 }
+.myButton:hover .icon, .myButton-sm:hover .icon, .myButton:hover .icon-sm, .myButton-sm:hover .icon-sm {
+  color: white;
+}
 
 .myButton-sm {
   padding: 8px 16px;
 }
 
-.Btn, .Btn-text {
+.Btn, .Btn-outline, .Btn-text {
   background-color: white;
   color: #5a5a5a;
   text-align: center;
   text-decoration: none;
+  border: 1px solid #6d5dd7;
+  border-radius: 10px;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   transition: all 0.2s ease;
   cursor: pointer;
-  border: 1px solid #6d5dd7;
 }
-.Btn:hover, .Btn-text:hover {
+.Btn:hover, .Btn-outline:hover, .Btn-text:hover {
   color: white;
   background-color: #6d5dd7;
 }
 .Btn-text {
   border: none;
-  padding: 5px 5px;
-  border-radius: 10px;
+  padding: 5px 8px;
+}
+.Btn-outline {
+  padding: 5px 8px;
 }
 
 .myNav {
@@ -266,11 +300,17 @@ a {
   column-gap: 20px;
 }
 
+.grid-book-cover {
+  border: 1px solid #6d5dd7;
+}
+
+.grid-book-desc {
+  border: 1px solid #6d5dd7;
+}
 .grid-book-desc .heading {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 50px;
   color: #6d5dd7;
-  font-family: "Limelight", cursive;
 }
 
 /* Book Detail */
@@ -603,12 +643,19 @@ input[type=text]:placeholder {
   color: #5a5a5a;
 }
 
-.textN {
+.myText-sm, .myText-sm-color {
+  font-size: 11px;
+}
+.myText-sm-color {
+  color: #6d5dd7;
+}
+
+.text-color {
   color: #5a5a5a;
   font-weight: bold;
 }
 
-.textP {
+.text-color {
   cursor: default;
   color: #6d5dd7;
 }
@@ -622,7 +669,6 @@ input[type=text]:placeholder {
 .heading-title, .heading-title-md {
   color: #6d5dd7;
 }
-
 .heading-title-md {
   font-size: 20px;
 }
@@ -655,15 +701,90 @@ input[type=text]:placeholder {
   width: 100%;
 }
 
-.scaleUp {
+.scaleUp, .scaleUp-lite, .scaleUp-down, .scaleUp-color {
   transition: all 0.2s ease;
 }
-.scaleUp:hover {
+.scaleUp:hover, .scaleUp-lite:hover, .scaleUp-down:hover, .scaleUp-color:hover {
   transform: scale(1.2);
+}
+.scaleUp-lite:hover {
+  transform: scale(1.1);
+}
+.scaleUp-down:hover {
+  transform: scale(1.1) translateY(5%);
+  background-color: #6d5dd7;
+}
+.scaleUp-color:hover {
+  transform: scale(1.1) translateY(5%);
+  background-color: #6d5dd7;
+}
+.scaleUp-color:hover .myText-sm, .scaleUp-color:hover .myText-sm-color {
+  color: white;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .Container {
   margin-top: 100px;
+}
+
+.layout-container {
+  position: relative;
+  margin-top: 100px;
+  height: 1600px;
+  padding: 0 0;
+}
+.layout-container .sidebar {
+  margin-top: 40px;
+  border: 1px solid #6d5dd7;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 500px;
+}
+.layout-container .showcase-container {
+  position: relative;
+  gap: 100px;
+  margin-top: 40px;
+}
+.layout-container .showcase-container .row .collum {
+  width: auto;
+  height: 200px;
+  position: relative;
+  border-top: 2px solid #6d5dd7;
+  padding: 20px 0 20px 0;
+  justify-content: flex-start;
+}
+.layout-container .showcase-container .row .collum .seemore-btn {
+  cursor: pointer;
+  position: absolute;
+  top: -25%;
+  right: 0;
+  font-size: 20px;
+}
+.layout-container .showcase-container .row .collum .category-title {
+  display: block;
+  position: absolute;
+  top: -25%;
+  left: 0;
+  font-size: 30px;
+  color: #6d5dd7;
+}
+.layout-container .showcase-container .row .collum .product {
+  width: 200px;
+  height: 210px;
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  border: 1px solid #6d5dd7;
+}
+.layout-container .showcase-container .row .collum .product img {
+  margin-top: 5px;
+  width: 110px;
+  height: 140px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
