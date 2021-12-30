@@ -22,6 +22,10 @@ html {
   background: #555;
 }
 
+.footer {
+  background-color: #6d5dd7;
+}
+
 /* Text  */
 .text {
   cursor: default;
@@ -635,6 +639,10 @@ input[type=text]:placeholder {
 /* OTHERS */
 *:focus {
   outline: none;
+}
+
+.footer {
+  background-color: #6d5dd7;
 }
 
 /* Text  */
